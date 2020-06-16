@@ -1,18 +1,22 @@
 # drmemtrace_samples
 
-Memory trace samples from DynamoRIO's drmemtrace tracer for its drcachesim analyzer.
+Memory trace samples from DynamoRIO's drmemtrace tracer for its [drcachesim analyzer](http://dynamorio.org/dynamorio_docs/page_drcachesim.html).
 
 ## Trace format
 
-The memory address tracer we use is part of the ["drcachesim" open-source
+The memory address tracer we use is part of the [drcachesim open-source
 tool](http://dynamorio.org/dynamorio_docs/page_drcachesim.html), which is
 part of the [DynamoRIO dynamic binary instrumentation
-framework](http://dynamorio.org).
+framework](http://dynamorio.org).  Here we summarize the tracing format.
+See the [drcachesim documentation](http://dynamorio.org/dynamorio_docs/page_drcachesim.html)
+for further information.
 
 A trace contains a sequence of user-mode instruction and memory fetches for
-each thread in a target application.
+each thread in a target application.  Each 32KB block of thread data has a
+timestamp and records which cpu it executon on, allowing reconstructing the
+thread interleaving at that granularity.
 
-The trace format used by analysis tools is the [memref_t
+The trace format used by trace analysis tools is the [memref_t
 structure](http://dynamorio.org/dynamorio_docs/union__memref__t.html)
 ([source
 file](https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/common/memref.h)).
