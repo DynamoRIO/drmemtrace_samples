@@ -13,7 +13,7 @@ for further information.
 
 A trace contains a sequence of user-mode instruction and memory fetches for
 each thread in a target application.  Each 32KB block of thread data has a
-timestamp and records which cpu it executon on, allowing reconstructing the
+timestamp and records which cpu it executed on, allowing reconstructing the
 thread interleaving at that granularity.
 
 The trace format used by trace analysis tools is the [memref_t
