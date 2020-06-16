@@ -9,6 +9,9 @@ tool](http://dynamorio.org/dynamorio_docs/page_drcachesim.html), which is
 part of the [DynamoRIO dynamic binary instrumentation
 framework](http://dynamorio.org).
 
+A trace contains a sequence of user-mode instruction and memory fetches for
+each thread in a target application.
+
 The trace format used by analysis tools is the [memref_t
 structure](http://dynamorio.org/dynamorio_docs/union__memref__t.html)
 ([source
