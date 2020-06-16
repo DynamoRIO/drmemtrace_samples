@@ -1,7 +1,7 @@
 Sample x86_64 trace directory contents:
-+ drmemtrace.threadsig.42739.7183.dir/trace/* == the trace itself, with a
++ drmemtrace.threadsig.11451.1365.dir/trace/* == the trace itself, with a
   separate file per application thread.
-+ drmemtrace.threadsig.42739.7183.dir/raw/modules.log == the list of libraries
++ drmemtrace.threadsig.11451.1365.dir/raw/modules.log == the list of libraries
   mapped into the application address space.
 + binaries/ == binaries for the librares listed in the modules.log file.
 + threadsig.cpp == the source code of the traced application.
@@ -47,7 +47,7 @@ A low-level textual view of the sample trace:
 --------------------------------------------------
 
 It is a series of instruction fetch, data fetch, and metadata entries.  The
-fetches contain addresses and sizes ("x3" is a size in the verbose
+fetches contain addresses and sizes ("x4" is a size in the verbose
 listing).  The addresses are all virtual.  The metadata
 "markers" indicate things like which core a thread executed on, timestamps,
 an arriving signal causing a PC discontinuity, etc.
