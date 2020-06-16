@@ -97,7 +97,7 @@ Counts of event types in the trace:
   <...>
 
 Top opcodes in the trace:
-  $ bin64/drrun -t drcachesim -indir drmemtrace*.dir -simulator_type opcode_mix -module_file drmemtrace*.dir/modules.log
+  $ bin64/drrun -t drcachesim -indir drmemtrace*.dir -simulator_type opcode_mix -module_file drmemtrace*.dir/raw/modules.log
   Opcode mix tool results:
          33456786 : total executed instructions
           8003446 :       stp
