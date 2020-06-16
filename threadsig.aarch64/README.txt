@@ -1,4 +1,4 @@
-Sample x86_64 trace directory contents:
+Sample aarch64 trace directory contents:
 + drmemtrace.threadsig.11451.1365.dir/trace/* == the trace itself, with a
   separate file per application thread.
 + drmemtrace.threadsig.11451.1365.dir/raw/modules.log == the list of libraries
