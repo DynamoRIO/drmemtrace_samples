@@ -112,13 +112,8 @@ Top opcodes in the trace:
 
 The "xx" is part of a set of opcodes not yet added to the decoder [8].
 
-For ease of sharing without need for a contract, everything here is
-open-source in Github.  The final traces we'll provide will have some
-slight differences (compression type; extra modules.log field).
-
 You can run any of the commands above yourself by downloading DynamoRIO
-[9].  (These weekly automated builds are currently only x86-only.  There
-are ARM builds in the periodic release packages.)
+[9].
 
 References from above:
 
