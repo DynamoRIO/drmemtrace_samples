@@ -1,14 +1,14 @@
 # drmemtrace_samples
 
-Memory trace samples from DynamoRIO's drmemtrace tracer for its [drcachesim analyzer](http://dynamorio.org/dynamorio_docs/page_drcachesim.html).
+Memory trace samples from DynamoRIO's drmemtrace tracer for its [drcachesim analyzer](http://dynamorio.org/page_drcachesim.html).
 
 ## Trace format
 
 The memory address tracer we use is part of the [drcachesim open-source
-tool](http://dynamorio.org/dynamorio_docs/page_drcachesim.html), which is
+tool](http://dynamorio.org/page_drcachesim.html), which is
 part of the [DynamoRIO dynamic binary instrumentation
 framework](http://dynamorio.org).  Here we summarize the tracing format.
-See the [drcachesim documentation](http://dynamorio.org/dynamorio_docs/page_drcachesim.html)
+See the [drcachesim documentation](http://dynamorio.org/page_drcachesim.html)
 for further information.
 
 A trace contains a sequence of user-mode instruction and memory fetches for
@@ -17,7 +17,7 @@ timestamp and records which cpu it executed on, allowing reconstructing the
 thread interleaving at that granularity.
 
 The trace format used by trace analysis tools is the [memref_t
-structure](http://dynamorio.org/dynamorio_docs/union__memref__t.html)
+structure](http://dynamorio.org/union__memref__t.html)
 ([source
 file](https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/common/memref.h)).
 A simple analysis tool to look at is
@@ -56,7 +56,7 @@ It is a series of instruction fetch, data fetch, and metadata entries.  The
 fetches contain addresses and sizes ("x3" is a size in the verbose
 listing).  The addresses are all virtual (it is possible to [gather
 physical addresses in some
-circumstances](http://dynamorio.org/dynamorio_docs/page_drcachesim.html#sec_drcachesim_phys)).
+circumstances](https://dynamorio.org/sec_drcachesim_phys.html)).
 The metadata "markers" indicate things like which core a thread executed
 on, timestamps, an arriving signal causing a PC discontinuity, etc.
 
@@ -75,4 +75,4 @@ application are required, in addition to the trace itself.  For the vdso
 the raw bytes are embedded in the modules file.
 
 Other aspects of the trace which help core simulation are [discussed in our
-documentation](http://dynamorio.org/dynamorio_docs/page_drcachesim.html#sec_drcachesim_core).
+documentation](https://dynamorio.org/sec_drcachesim_core.html).

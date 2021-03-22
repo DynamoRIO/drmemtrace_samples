@@ -1,7 +1,7 @@
 Sample x86_64 trace directory contents:
-+ drmemtrace.threadsig.42739.7183.dir/trace/* == the trace itself, with a
++ drmemtrace.threadsig.342625.4446.dir/trace/* == the trace itself, with a
   separate file per application thread.
-+ drmemtrace.threadsig.42739.7183.dir/raw/modules.log == the list of libraries
++ drmemtrace.threadsig.342625.4446.dir/raw/modules.log == the list of libraries
   mapped into the application address space.
 + binaries/ == binaries for the librares listed in the modules.log file.
 + threadsig.cpp == the source code of the traced application.
@@ -17,30 +17,30 @@ simple analysis tool to look at is basic_counts.cpp [4].
 A low-level textual view of the sample trace:
 --------------------------------------------------
   $ bin64/drrun -t drcachesim -indir drmemtrace*.dir -verbose 3 2>&1 | less
-  ::42739.42739:: marker type 2 value 13236739721582852
-  ::42739.42739:: marker type 3 value 2
-  new thread 42739 => core 0 (count=0)
-  ::42739.42739::  @0x402460 instr x2
-  ::42739.42739::  @0x402462 instr x3
-  ::42739.42739::  @0x402465 instr x1
-  ::42739.42739::  @0x402465 read 0x7ffc80c11530 x8
-  ::42739.42739::  @0x402466 instr x3
+  ::342625.342625:: marker type 2 value 13260900247983768
+  ::342625.342625:: marker type 3 value 3
+  new thread 342625 => core 0 (count=0)
+  ::342625.342625::  @0x402460 instr x2
+  ::342625.342625::  @0x402462 instr x3
+  ::342625.342625::  @0x402465 instr x1
+  ::342625.342625::  @0x402465 read 0x7ffe70dce480 x8
+  ::342625.342625::  @0x402466 instr x3
   <...>
-  ::42739.42739::  @0x467c4a instr x5
-  ::42739.42739::  @0x467c4f instr x2
-  ::42739.42740:: marker type 2 value 13236739721631715
-  ::42739.42740:: marker type 3 value 11
-  new thread 42740 => core 1 (count=0)
-  ::42739.42740::  @0x467c51 instr x3
-  ::42739.42740::  @0x467c54 instr x2
-  ::42739.42740::  @0x467c56 instr x2
-  ::42739.42740::  @0x467c59 instr x2
-  ::42739.42740::  @0x467c5b instr x1
-  ::42739.42740::  @0x467c5b read 0x7faa6b5a2e70 x8
-  ::42739.42740::  @0x467c5c instr x1
-  ::42739.42740::  @0x467c5c read 0x7faa6b5a2e78 x8
-  ::42739.42740::  @0x467c5d instr x2
-  ::42739.42740::  @0x467c5d write 0x7faa6b5a2e78 x8
+  ::342625.342625::  @0x467c4a instr x5
+  ::342625.342625::  @0x467c4f instr x2
+  ::342625.342626:: marker type 2 value 13260900248221723
+  ::342625.342626:: marker type 3 value 0
+  new thread 342626 => core 1 (count=0)
+  ::342625.342626::  @0x467c51 instr x3
+  ::342625.342626::  @0x467c54 instr x2
+  ::342625.342626::  @0x467c56 instr x2
+  ::342625.342626::  @0x467c59 instr x2
+  ::342625.342626::  @0x467c5b instr x1
+  ::342625.342626::  @0x467c5b read 0x7f899f928e70 x8
+  ::342625.342626::  @0x467c5c instr x1
+  ::342625.342626::  @0x467c5c read 0x7f899f928e78 x8
+  ::342625.342626::  @0x467c5d instr x2
+  ::342625.342626::  @0x467c5d write 0x7f899f928e78 x8
   <...>
 --------------------------------------------------
 
@@ -77,34 +77,36 @@ Counts of event types in the trace:
   $ bin64/drrun -t drcachesim -indir drmemtrace*.dir -simulator_type basic_counts
   Basic counts tool results:                                                       
   Total counts:                                                                    
-      15882618 total (fetched) instructions  
-          9001 total unique (fetched) instructions                                 
-      12600075 total non-fetched instructions                                      
-             0 total prefetches                                                    
-      15219226 total data loads          
-      17411533 total data stores      
-            21 total threads                                                       
-         21862 total scheduling markers                                            
-            44 total transfer markers                                              
-             0 total function id markers                                           
-             0 total function return address markers                        
-             0 total function argument markers                                     
-             0 total function return value markers                                 
-             0 total other markers 
-  Thread 42740 counts:                                                             
-        790301 (fetched) instructions                                              
-           346 unique (fetched) instructions                                      
+      15892162 total (fetched) instructions
+          8925 total unique (fetched) instructions
+      12600073 total non-fetched instructions
+             0 total prefetches
+      15221284 total data loads
+      17411564 total data stores
+             0 total icache flushes
+             0 total dcache flushes
+            21 total threads
+         22038 total scheduling markers
+           108 total transfer markers
+             0 total function id markers
+             0 total function return address markers
+             0 total function argument markers
+             0 total function return value markers
+            42 total other markers
+  Thread 342626 counts:
+        790377 (fetched) instructions
+           346 unique (fetched) instructions
   <...>
 
 Top opcodes in the trace:
   $ bin64/drrun -t drcachesim -indir drmemtrace*.dir -simulator_type opcode_mix -module_file drmemtrace*.dir/raw/modules.log
   Opcode mix tool results:
-         28482693 : total executed instructions
+         28492235 : total executed instructions
          12800000 :  rep movs
-          2400131 :   vmovdqa
-          1608323 :       cmp
-          1600375 :   vmovdqu
-          1006032 :       add
+          2400137 :   vmovdqa
+          1609991 :       cmp
+          1600378 :   vmovdqu
+          1007478 :       add
           1000184 :     movsd
   <...>
 
@@ -113,12 +115,12 @@ You can run any of the commands above yourself by downloading DynamoRIO
 
 References from above:
 
-[1] = http://dynamorio.org/dynamorio_docs/page_drcachesim.html
+[1] = http://dynamorio.org/page_drcachesim.html
 [1] = http://dynamorio.org
-[3] = http://dynamorio.org/dynamorio_docs/union__memref__t.html
+[3] = http://dynamorio.org/union__memref__t.html
 (source: https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/common/memref.h)
 [4] = https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/basic_counts.cpp
 [5] = https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/opcode_mix.cpp
-[6] = http://dynamorio.org/dynamorio_docs/page_drcachesim.html#sec_drcachesim_core
+[6] = https://dynamorio.org/sec_drcachesim_core.html
 [7] = https://github.com/DynamoRIO/dynamorio/blob/master/suite/tests/pthreads/ptsig.c
 [8] = https://github.com/DynamoRIO/dynamorio/releases/latest
