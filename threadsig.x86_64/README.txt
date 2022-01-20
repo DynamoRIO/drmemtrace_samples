@@ -11,7 +11,7 @@ The memory address tracer we use is part of the "drcachesim" open-source
 tool [1], which is part of the DynamoRIO dynamic binary instrumentation
 framework [2].
 
-The trace format used by analysis tools is the memref_t structure [3].  A
+The trace format used by analysis tools is described in online docs [3].  A
 simple analysis tool to look at is basic_counts.cpp [4].
 
 A human-readable view of the sample trace highlighting thread switches and
@@ -150,7 +150,7 @@ References from above:
 
 [1] = http://dynamorio.org/page_drcachesim.html
 [1] = http://dynamorio.org
-[3] = http://dynamorio.org/union__memref__t.html
+[3] = https://dynamorio.org/sec_drcachesim_format.html
 (source: https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/common/memref.h)
 [4] = https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/basic_counts.cpp
 [5] = https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/opcode_mix.cpp

@@ -16,11 +16,9 @@ each thread in a target application.  Each 32KB block of thread data has a
 timestamp and records which cpu it executed on, allowing reconstructing the
 thread interleaving at that granularity.
 
-The trace format used by trace analysis tools is the [memref_t
-structure](http://dynamorio.org/union__memref__t.html)
-([source
-file](https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/common/memref.h)).
-A simple analysis tool to look at is
+The trace format is described further at
+https://dynamorio.org/sec_drcachesim_format.html.
+A simple example trace analysis tool that reads the trace format is
 [basic_counts.cpp](https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/basic_counts.cpp).
 
 A human-readable view of a sample trace highlighting thread switches and
