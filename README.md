@@ -106,7 +106,7 @@ on, timestamps, an arriving signal causing a PC discontinuity, etc.
 For using a trace in a core simulator, the provided instruction encodings
 can be decoded into opcodes and operands as is done with the "view" tool
 above.  This can be done with DynamoRIO's decoder, as in the provided
-sample tool [opcode_mix.cpp]
-(https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/opcode_mix.cpp).
+sample tool
+[opcode_mix.cpp](https://github.com/DynamoRIO/dynamorio/blob/master/clients/drcachesim/tools/opcode_mix.cpp).
 Other aspects of the trace which help core simulation are discussed in [our
 documentation](https://dynamorio.org/sec_drcachesim_core.html).
