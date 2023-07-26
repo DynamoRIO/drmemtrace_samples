@@ -1,5 +1,5 @@
 Sample aarch64 trace directory contents:
-+ drmemtrace.threadsig.1773966.7161.dir/trace/* == the trace itself, with a
++ drmemtrace.threadsig.2444839.4049.dir/trace/* == the trace itself, with a
   separate file per application thread.
 + binaries/threadsig == the executable that was traced, made available
   for experimentation and comparison in new traces.
@@ -17,52 +17,51 @@ A human-readable view of the sample trace highlighting thread switches and
 a signal handler:
 --------------------------------------------------
 Output format:
-<record#>: T<tid> <record details>
+<--record#-> <--instr#->: <---tid---> <record details>
 ------------------------------------------------------------
-        1: T1773976 <marker: version 4>
-        2: T1773976 <marker: filetype 0x208>
-        3: T1773976 <marker: cache line size 64>
-        4: T1773976 <marker: chunk instruction count 10000000>
-        5: T1773976 <marker: page size 4096>
+           1           0:     2444839 <marker: version 5>
+           2           0:     2444839 <marker: filetype 0xe08>
+           3           0:     2444839 <marker: cache line size 64>
+           4           0:     2444839 <marker: chunk instruction count 10000000>
+           5           0:     2444839 <marker: page size 4096>
 <...>
-    10562: T1773966 ifetch       4 byte(s) @ 0x000000000042e268 d2801b88   movz   $0x00dc lsl $0x00 -> %x8
-    10563: T1773966 ifetch       4 byte(s) @ 0x000000000042e26c d4000001   svc    $0x0000
+       10802        8011:     2444840 ifetch       4 byte(s) @ 0x0000000000401d68 91038040   add    %x2 $0x00e0 lsl $0x00 -> %x0
+       10803        8012:     2444840 ifetch       4 byte(s) @ 0x0000000000401d6c d4000001   svc    $0x0000
+       10804        8012:     2444840 <marker: system call 99>
 ------------------------------------------------------------
-    10564: T1773967 <marker: timestamp 13309327193840464>
-    10565: T1773967 <marker: tid 1773967 on core 52>
-    10566: T1773967 ifetch       4 byte(s) @ 0x000000000042e270 f100001f   subs   %x0 $0x0000 lsl $0x00 -> %xzr
-    10567: T1773967 ifetch       4 byte(s) @ 0x000000000042e274 540000e0   b.eq   $0x000000000042e290
-    10568: T1773967 ifetch       4 byte(s) @ 0x000000000042e290 d280001d   movz   $0x0000 lsl $0x00 -> %x29
+       10805        8012:     2444839 <marker: timestamp 13334813807921548>
+       10806        8012:     2444839 <marker: tid 2444839 on core 15>
+       10807        8013:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
+       10808        8014:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
+       10809        8015:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
 <...>
-   108834: T1773966 ifetch       4 byte(s) @ 0x0000000000428540 17fff04c   b      $0x0000000000424670
-   108835: T1773966 <marker: kernel xfer from 0x424670 to handler>
-------------------------------------------------------------
-<...>
-------------------------------------------------------------
-   122607: T1773966 <marker: timestamp 13309327193842204>
-   122608: T1773966 <marker: tid 1773966 on core 51>
-   122609: T1773966 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
-   122610: T1773966 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4
-   122611: T1773966 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
-   122612: T1773966 ifetch       4 byte(s) @ 0x00000000004008e4 9129c000   add    %x0 $0x0a70 lsl $0x00 -> %x0
-   122613: T1773966 ifetch       4 byte(s) @ 0x00000000004008e8 b9404801   ldr    +0x48(%x0)[4byte] -> %w1
-   122614: T1773966 read         4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008e8
-   122615: T1773966 ifetch       4 byte(s) @ 0x00000000004008ec 11000421   add    %w1 $0x0001 lsl $0x00 -> %w1
-   122616: T1773966 ifetch       4 byte(s) @ 0x00000000004008f0 b9004801   str    %w1 -> +0x48(%x0)[4byte]
-   122617: T1773966 write        4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008f0
-   122618: T1773966 ifetch       4 byte(s) @ 0x00000000004008f4 d65f03c0   ret    %x30
-   122619: T1773966 ifetch       4 byte(s) @ 0x0000000071170610 52801168   movz   $0x008b lsl $0x00 -> %w8
-   122620: T1773966 ifetch       4 byte(s) @ 0x0000000071170614 d4000001   svc    $0x0000
-   122621: T1773966 <marker: timestamp 13309327193842230>
-   122622: T1773966 <marker: tid 1773966 on core 51>
-   122623: T1773966 <marker: syscall xfer from 0x71170618>
-------------------------------------------------------------
-<...>
-------------------------------------------------------------
-   384400: T1773966 <marker: timestamp 13309327193843065>
-   384401: T1773966 <marker: tid 1773966 on core 51>
-   384402: T1773966 ifetch       4 byte(s) @ 0x0000000000424670 a9b77bfd   stp    %x29 %x30 %sp $0xffffffffffffff70 -> -0x90(%sp)[16byte] %sp
-   384403: T1773966 write       16 byte(s) @ 0x0000ffffe33a8960 by PC 0x0000000000424670
+       10850        8037:     2444839 <marker: indirect branch target 0x400510>
+       10851        8038:     2444839 ifetch       4 byte(s) @ 0x0000000000402420 d65f03c0   ret    %x30
+       10852        8038:     2444839 <marker: kernel xfer from 0x400510 to handler>
+       10853        8038:     2444839 <marker: timestamp 13334813807925181>
+       10854        8038:     2444839 <marker: tid 2444839 on core 15>
+       10855        8039:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
+       10856        8040:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
+       10857        8041:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
+       10858        8042:     2444839 ifetch       4 byte(s) @ 0x00000000004008e4 9129c000   add    %x0 $0x0a70 lsl $0x00 -> %x0
+       10859        8043:     2444839 ifetch       4 byte(s) @ 0x00000000004008e8 b9404801   ldr    +0x48(%x0)[4byte] -> %w1
+       10860        8043:     2444839 read         4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008e8
+       10861        8044:     2444839 ifetch       4 byte(s) @ 0x00000000004008ec 11000421   add    %w1 $0x0001 lsl $0x00 -> %w1
+       10862        8045:     2444839 ifetch       4 byte(s) @ 0x00000000004008f0 b9004801   str    %w1 -> +0x48(%x0)[4byte]
+       10863        8045:     2444839 write        4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008f0
+       10864        8045:     2444839 <marker: indirect branch target 0x7142ff14>
+       10865        8046:     2444839 ifetch       4 byte(s) @ 0x00000000004008f4 d65f03c0   ret    %x30
+       10866        8047:     2444839 ifetch       4 byte(s) @ 0x000000007142ff14 52801168   movz   $0x008b lsl $0x00 -> %w8
+       10867        8048:     2444839 ifetch       4 byte(s) @ 0x000000007142ff18 d4000001   svc    $0x0000
+       10868        8048:     2444839 <marker: system call 139>
+       10869        8048:     2444839 <marker: timestamp 13334813807925213>
+       10870        8048:     2444839 <marker: tid 2444839 on core 15>
+       10871        8048:     2444839 <marker: syscall xfer from 0x7142ff1c>
+       10872        8048:     2444839 <marker: timestamp 13334813807925239>
+       10873        8048:     2444839 <marker: tid 2444839 on core 15>
+       10874        8049:     2444839 ifetch       4 byte(s) @ 0x0000000000400510 340001a0   cbz    $0x0000000000400544 %w0 (taken)
+       10875        8050:     2444839 ifetch       4 byte(s) @ 0x0000000000400544 a94687a0   ldp    +0x68(%x29)[16byte] -> %x0 %x1
+       10876        8050:     2444839 read        16 byte(s) @ 0x0000ffffe7ac6178 by PC 0x0000000000400544
 <...>
 --------------------------------------------------
 
@@ -93,40 +92,39 @@ Counts of event types in the trace from the basic_counts [4] tool:
   $ bin64/drrun -t drcachesim -indir drmemtrace.threadsig.[0-9]*.dir -simulator_type basic_counts
   Basic counts tool results:
   Total counts:
-      12050265 total (fetched) instructions
-          6447 total unique (fetched) instructions
+      12050661 total (fetched) instructions
+          6425 total unique (fetched) instructions
              0 total non-fetched instructions
             39 total prefetches
-        210230 total data loads
-       2607246 total data stores
+        210261 total data loads
+       2607283 total data stores
              0 total icache flushes
              0 total dcache flushes
             21 total threads
-          2550 total scheduling markers
-            22 total transfer markers
+          2888 total scheduling markers
+           140 total transfer markers
              0 total function id markers
              0 total function return address markers
              0 total function argument markers
              0 total function return value markers
              0 total physical address + virtual address marker pairs
              0 total physical address unavailable markers
-           105 total other markers
-         13584 total encodings
-  Thread 1773982 counts:
-        600366 (fetched) instructions
-           399 unique (fetched) instructions
-             0 non-fetched instructions
+        201793 total other markers
+         13601 total encodings
+  Thread 2444840 counts:
+        600364 (fetched) instructions
+           374 unique (fetched) instructions
   <...>
 
 Top opcodes in the trace from the opcode_mix [5] tool:
   $ bin64/drrun -t drcachesim -indir drmemtrace.threadsig.[0-9]*.dir -simulator_type opcode_mix -module_file drmemtrace.threadsig.[0-9]*.dir/raw/modules.log
   Opcode mix tool results:
-         12050265 : total executed instructions
-          1604469 :     bcond
-          1405678 :       add
-          1403688 :      subs
+         12050661 : total executed instructions
+          1604515 :     bcond
+          1405794 :       add
+          1403734 :      subs
           1403183 :       stp
-           800687 :       and
+           800682 :       and
            800039 :    dc_zva
   <...>
 
