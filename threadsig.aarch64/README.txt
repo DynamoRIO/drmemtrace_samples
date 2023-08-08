@@ -25,43 +25,43 @@ Output format:
            4           0:     2444839 <marker: chunk instruction count 10000000>
            5           0:     2444839 <marker: page size 4096>
 <...>
-       10802        8011:     2444840 ifetch       4 byte(s) @ 0x0000000000401d68 91038040   add    %x2 $0x00e0 lsl $0x00 -> %x0
-       10803        8012:     2444840 ifetch       4 byte(s) @ 0x0000000000401d6c d4000001   svc    $0x0000
-       10804        8012:     2444840 <marker: system call 99>
+       10660        8011:     2444840 ifetch       4 byte(s) @ 0x0000000000401d68 91038040   add    %x2 $0x00e0 lsl $0x00 -> %x0
+       10661        8012:     2444840 ifetch       4 byte(s) @ 0x0000000000401d6c d4000001   svc    $0x0000
+       10662        8012:     2444840 <marker: system call 99>
 ------------------------------------------------------------
-       10805        8012:     2444839 <marker: timestamp 13334813807921548>
-       10806        8012:     2444839 <marker: tid 2444839 on core 15>
-       10807        8013:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
-       10808        8014:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
-       10809        8015:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
+       10663        8012:     2444839 <marker: timestamp 13334813807921548>
+       10664        8012:     2444839 <marker: tid 2444839 on core 15>
+       10665        8013:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
+       10666        8014:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
+       10667        8015:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
 <...>
-       10850        8037:     2444839 <marker: indirect branch target 0x400510>
-       10851        8038:     2444839 ifetch       4 byte(s) @ 0x0000000000402420 d65f03c0   ret    %x30
-       10852        8038:     2444839 <marker: kernel xfer from 0x400510 to handler>
-       10853        8038:     2444839 <marker: timestamp 13334813807925181>
-       10854        8038:     2444839 <marker: tid 2444839 on core 15>
-       10855        8039:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
-       10856        8040:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
-       10857        8041:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
-       10858        8042:     2444839 ifetch       4 byte(s) @ 0x00000000004008e4 9129c000   add    %x0 $0x0a70 lsl $0x00 -> %x0
-       10859        8043:     2444839 ifetch       4 byte(s) @ 0x00000000004008e8 b9404801   ldr    +0x48(%x0)[4byte] -> %w1
-       10860        8043:     2444839 read         4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008e8
-       10861        8044:     2444839 ifetch       4 byte(s) @ 0x00000000004008ec 11000421   add    %w1 $0x0001 lsl $0x00 -> %w1
-       10862        8045:     2444839 ifetch       4 byte(s) @ 0x00000000004008f0 b9004801   str    %w1 -> +0x48(%x0)[4byte]
-       10863        8045:     2444839 write        4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008f0
-       10864        8045:     2444839 <marker: indirect branch target 0x7142ff14>
-       10865        8046:     2444839 ifetch       4 byte(s) @ 0x00000000004008f4 d65f03c0   ret    %x30
-       10866        8047:     2444839 ifetch       4 byte(s) @ 0x000000007142ff14 52801168   movz   $0x008b lsl $0x00 -> %w8
-       10867        8048:     2444839 ifetch       4 byte(s) @ 0x000000007142ff18 d4000001   svc    $0x0000
-       10868        8048:     2444839 <marker: system call 139>
-       10869        8048:     2444839 <marker: timestamp 13334813807925213>
-       10870        8048:     2444839 <marker: tid 2444839 on core 15>
-       10871        8048:     2444839 <marker: syscall xfer from 0x7142ff1c>
-       10872        8048:     2444839 <marker: timestamp 13334813807925239>
-       10873        8048:     2444839 <marker: tid 2444839 on core 15>
-       10874        8049:     2444839 ifetch       4 byte(s) @ 0x0000000000400510 340001a0   cbz    $0x0000000000400544 %w0 (taken)
-       10875        8050:     2444839 ifetch       4 byte(s) @ 0x0000000000400544 a94687a0   ldp    +0x68(%x29)[16byte] -> %x0 %x1
-       10876        8050:     2444839 read        16 byte(s) @ 0x0000ffffe7ac6178 by PC 0x0000000000400544
+       10705        8037:     2444839 ifetch       4 byte(s) @ 0x000000000040241c a8cf7bfd   ldp    (%sp)[16byte] %sp $0x00000000000000f0 -> %x29 %x30 %sp
+       10706        8037:     2444839 read        16 byte(s) @ 0x0000ffffe7ac6020 by PC 0x000000000040241c
+       10707        8038:     2444839 ifetch       4 byte(s) @ 0x0000000000402420 d65f03c0   ret    %x30 (target 0x400510)
+       10708        8038:     2444839 <marker: kernel xfer from 0x400510 to handler>
+       10709        8038:     2444839 <marker: timestamp 13334813807925181>
+       10710        8038:     2444839 <marker: tid 2444839 on core 15>
+       10711        8039:     2444839 ifetch       4 byte(s) @ 0x00000000004008d8 7100681f   subs   %w0 $0x001a lsl $0x00 -> %wzr
+       10712        8040:     2444839 ifetch       4 byte(s) @ 0x00000000004008dc 540000c1   b.ne   $0x00000000004008f4 (untaken)
+       10713        8041:     2444839 ifetch       4 byte(s) @ 0x00000000004008e0 f0000520   adrp   <rel> 0x00000000004a7000 -> %x0
+       10714        8042:     2444839 ifetch       4 byte(s) @ 0x00000000004008e4 9129c000   add    %x0 $0x0a70 lsl $0x00 -> %x0
+       10715        8043:     2444839 ifetch       4 byte(s) @ 0x00000000004008e8 b9404801   ldr    +0x48(%x0)[4byte] -> %w1
+       10716        8043:     2444839 read         4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008e8
+       10717        8044:     2444839 ifetch       4 byte(s) @ 0x00000000004008ec 11000421   add    %w1 $0x0001 lsl $0x00 -> %w1
+       10718        8045:     2444839 ifetch       4 byte(s) @ 0x00000000004008f0 b9004801   str    %w1 -> +0x48(%x0)[4byte]
+       10719        8045:     2444839 write        4 byte(s) @ 0x00000000004a7ab8 by PC 0x00000000004008f0
+       10720        8046:     2444839 ifetch       4 byte(s) @ 0x00000000004008f4 d65f03c0   ret    %x30 (target 0x7142ff14)
+       10721        8047:     2444839 ifetch       4 byte(s) @ 0x000000007142ff14 52801168   movz   $0x008b lsl $0x00 -> %w8
+       10722        8048:     2444839 ifetch       4 byte(s) @ 0x000000007142ff18 d4000001   svc    $0x0000
+       10723        8048:     2444839 <marker: system call 139>
+       10724        8048:     2444839 <marker: timestamp 13334813807925213>
+       10725        8048:     2444839 <marker: tid 2444839 on core 15>
+       10726        8048:     2444839 <marker: syscall xfer from 0x7142ff1c>
+       10727        8048:     2444839 <marker: timestamp 13334813807925239>
+       10728        8048:     2444839 <marker: tid 2444839 on core 15>
+       10729        8049:     2444839 ifetch       4 byte(s) @ 0x0000000000400510 340001a0   cbz    $0x0000000000400544 %w0 (taken)
+       10730        8050:     2444839 ifetch       4 byte(s) @ 0x0000000000400544 a94687a0   ldp    +0x68(%x29)[16byte] -> %x0 %x1
+       10731        8050:     2444839 read        16 byte(s) @ 0x0000ffffe7ac6178 by PC 0x0000000000400544
 <...>
 --------------------------------------------------
 
@@ -109,7 +109,7 @@ Counts of event types in the trace from the basic_counts [4] tool:
              0 total function return value markers
              0 total physical address + virtual address marker pairs
              0 total physical address unavailable markers
-        201793 total other markers
+           331 total other markers
          13601 total encodings
   Thread 2444840 counts:
         600364 (fetched) instructions
