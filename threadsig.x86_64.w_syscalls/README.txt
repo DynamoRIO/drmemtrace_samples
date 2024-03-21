@@ -90,7 +90,7 @@ on, timestamps, an arriving signal causing a PC discontinuity, etc.
 The kernel execution during system calls is indicated by
 TRACE_MARKER_TYPE_SYSCALL_TRACE_START and TRACE_MARKER_TYPE_SYSCALL_TRACE_END markers[3] which
 have the system call number as their value.  The system call trace is collected using
-drpttracer[9] which uses Intel-PT, on a system that supports the PT feature.
+drpttracer[9], which uses Intel-PT, on a system that supports the PT feature.
 Currently, we have an instruction-only trace for the system call execution by the
 kernel.  Data fetch entries will also be added in future. Some system calls that change the
 control flow or terminate the thread/process do not have a trace available (since DynamoRIO
