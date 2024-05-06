@@ -27,7 +27,7 @@ A human-readable view of a sample trace highlighting thread switches and
 a signal handler:
 ```
 --------------------------------------------------
-$ bin64/drrun -t drcachesim -indir drmemtrace.threadsig.[0-9]*.dir -simulator_type view -view_syntax intel 2>&1 | less
+$ bin64/drrun -t drcachesim -indir drmemtrace.threadsig.[0-9]*.dir -tool view -view_syntax intel 2>&1 | less
 Output format:
 <--record#-> <--instr#->: <---tid---> <record details>
 ------------------------------------------------------------
