@@ -4,8 +4,8 @@ Memory trace samples from DynamoRIO's drmemtrace tracer for its [trace analysis 
 
 ## Trace format
 
-The memory address tracer we use is part of the [drcachesim open-source
-tool](http://dynamorio.org/page_drcachesim.html), which is
+The memory address tracer we use is part of the [drmemtrace open-source
+tracing and analysis framework](http://dynamorio.org/page_drcachesim.html), which is
 part of the [DynamoRIO dynamic binary instrumentation
 framework](http://dynamorio.org).  Here we summarize the tracing format.
 See the [tracing and analysis framework
@@ -27,7 +27,7 @@ A human-readable view of a sample trace highlighting thread switches and
 a signal handler:
 ```
 --------------------------------------------------
-$ bin64/drrun -t drcachesim -indir drmemtrace.threadsig.[0-9]*.dir -tool view -view_syntax intel 2>&1 | less
+$ bin64/drrun -t drmemtrace -indir drmemtrace.threadsig.[0-9]*.dir -tool view -view_syntax intel 2>&1 | less
 Output format:
 <--record#-> <--instr#->: <---tid---> <record details>
 ------------------------------------------------------------
